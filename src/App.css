@@ -1,38 +1,46 @@
 .App {
   text-align: center;
+  width: 90%;
+  margin: auto;
+  padding: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.f-r-header-element {
+  float: right;
+  margin-right: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.blog-container {
+  background-color: grey;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 10px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-container::after {
+  /* apply clearfix */
+  content: "";
+  display: table;
+  clear: both;
+  /*  */
 }
 
-.App-link {
-  color: #61dafb;
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* TODO - common css class to float components to the left */
+.fl-l {
+  float: left;
+}
+
+.blog-likes {
+  margin-right: 5px;
+}
+
+.blog-content {
+  text-align: left;
 }

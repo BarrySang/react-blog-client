@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import { generateBlogs } from '../src/lib/lib-functions/lib-functions'
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [blogs, setBlogs] = useState([])
+  
+  // get all blogs
+  useEffect(() => {
+    let blogs = generateBlogs(5)
+    setBlogs(blogs)
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home blogs={blogs} />
     </div>
   );
 }
