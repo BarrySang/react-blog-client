@@ -20,5 +20,6 @@ export function generateBlogs(numberOfBlogs) {
     }
 
     return blogs
+    // set git
     // console.log(blogs)
 }
