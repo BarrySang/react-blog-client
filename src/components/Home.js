@@ -1,7 +1,8 @@
 import Blog from "./Blog"
+import Footer from "./Footer"
 import Header from "./Header"
 
-function Home ({blogs}) {
+function Home ({blogs, goToPreviousPage, goToNextPage, currentPage}) {
     return (
         <div>
             <Header />
@@ -16,6 +17,11 @@ function Home ({blogs}) {
                     />
                 ))
             }
+            <Footer
+                goToPreviousPage={goToPreviousPage}
+                goToNextPage={goToNextPage}
+                currentPage={currentPage}
+            />
         </div>
     )
 }

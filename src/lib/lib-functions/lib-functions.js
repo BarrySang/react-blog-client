@@ -20,6 +20,31 @@ export function generateBlogs(numberOfBlogs) {
     }
 
     return blogs
-    // set git
     // console.log(blogs)
+}
+
+export function formatNumber(value) {
+    const suffixes = ['', 'k', 'M', 'B', 'T'];
+  
+    let formattedValue = value;
+    let suffixIndex = 0;
+  
+    while (formattedValue >= 1000 && suffixIndex < suffixes.length - 1) {
+      formattedValue /= 1000;
+      suffixIndex++;
+    }
+  
+    const roundedValue = Math.round(formattedValue * 10) / 10;
+    return roundedValue + suffixes[suffixIndex];
+}
+  
+//   // Example usage:
+//   const result = formatNumber(3124);
+//   console.log(result); // Output: '3.1k'
+  
+// get index range for current page
+export function getIndexRange(currentPage, itemsPerPage) {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return {startIndex, endIndex}
 }

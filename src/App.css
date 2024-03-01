@@ -44,3 +44,8 @@
 .blog-content {
   text-align: left;
 }
+
+.blog-comments {
+  padding-bottom: 20px;
+  /* background-color: blue; */
+}
