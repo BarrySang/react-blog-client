@@ -1,4 +1,5 @@
 import Blog from "./Blog"
+import BlogPreview from "./BlogPreview"
 import Footer from "./Footer"
 import Header from "./Header"
 
@@ -7,7 +8,8 @@ function Home ({blogs, goToPreviousPage, goToNextPage, currentPage}) {
         <div>
             <Header />
             <h1>Home Component</h1>
-            {
+            <BlogPreview blogs={blogs} />
+            {/* {
                 blogs.map(blog => (
                     <Blog key={blog.id}
                         user={blog.user}
@@ -16,7 +18,7 @@ function Home ({blogs, goToPreviousPage, goToNextPage, currentPage}) {
                         comments={blog.comments}
                     />
                 ))
-            }
+            } */}
             <Footer
                 goToPreviousPage={goToPreviousPage}
                 goToNextPage={goToNextPage}

@@ -11,7 +11,7 @@
 }
 
 .blog-container {
-  background-color: grey;
+  background-color: rgb(235, 224, 224);
   margin: 10px;
   border-radius: 8px;
   padding: 10px;
@@ -48,4 +48,10 @@
 .blog-comments {
   padding-bottom: 20px;
   /* background-color: blue; */
+}
+
+.blog-title {
+  text-align: left;
+  color: rgb(40, 59, 99);
+  font-family: Arial, Helvetica, sans-serif;
 }
