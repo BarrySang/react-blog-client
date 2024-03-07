@@ -7,11 +7,9 @@ function BlogPreview ({blogs}) {
             {
                 blogs.map(blog => (
                     
-                    <Blog key={blog.id}
-                        user={blog.user}
-                        likes={blog.likes}
-                        comments={blog.comments}
-                        title={blog.title}
+                    <Blog
+                    key={blog.id}
+                    blog={blog}
                     />
                 ))
             }
