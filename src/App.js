@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './components/Home';
-import { generateBlogs, getIndexRange } from '../src/lib/lib-functions/lib-functions'
+import { generateBlogs, getBlog, getIndexRange } from '../src/lib/lib-functions/lib-functions'
 import { useEffect, useState } from 'react';
 import BlogPreview from './components/BlogPreview';
 import { HashRouter, Route, Routes } from 'react-router-dom';
@@ -60,13 +60,7 @@ function App() {
           
           />} />
           <Route path="/blogs/:blogId" element={<Blog
-          blog={blogsCurrentPage[0]}
-          // user={'test user'}
-          // content={'test content'}
-          // likes={123}
-          // comments={123}
-          // title={'test title'}
-          // id={1}
+          blogs={blogs}
           />} />
         </Routes>
         

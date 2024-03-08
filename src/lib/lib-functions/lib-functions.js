@@ -13,7 +13,7 @@ export function generateBlogs(numberOfBlogs) {
             id: blogs.length ? blogs[blogs.length - 1].id + 1 : 1,
             user: blogs.length ? 'user'+(blogs[blogs.length - 1].id + 1) : 'user1',
             title: textGenerator.generateSentence(25, 5), // blogs.length ? 'blog'+(blogs[blogs.length - 1].id + 1) : 'blog1',
-            content: 'Anim ex commodo pariatur duis laborum pariatur. Ex adipisicing qui ea pariatur consectetur mollit. Sint anim incididunt esse qui aliqua laborum duis do culpa sint laborum aute exercitation sit. Sunt fugiat mollit ipsum non. Quis excepteur occaecat ea voluptate.',
+            content: textGenerator.generateParagraph(50, 10, 5),//  'Anim ex commodo pariatur duis laborum pariatur. Ex adipisicing qui ea pariatur consectetur mollit. Sint anim incididunt esse qui aliqua laborum duis do culpa sint laborum aute exercitation sit. Sunt fugiat mollit ipsum non. Quis excepteur occaecat ea voluptate.',
             comments: Math.floor((Math.random() * 100) + 1),
             likes: Math.floor((Math.random() * 3000) + 500),
             createdOn: Math.floor((Math.random() * 30) + 1)+
@@ -53,4 +53,15 @@ export function getIndexRange(currentPage, itemsPerPage) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     return {startIndex, endIndex}
+}
+
+/**
+ * 
+ * @param {number} id 
+ * @param {array} blogs 
+ * @returns boolean or object
+ */
+export function getBlog(id, blogs) {
+    let results = blogs.filter(blog => parseInt(blog.id) === parseInt(id))
+    return results[0]
 }
